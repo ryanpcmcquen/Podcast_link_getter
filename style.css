@@ -5,7 +5,7 @@ html, body {
 
 .secret_message {
     visibility: hidden;
-    font-size: 80px;
+    font-size: 125%;
     color: #111;
     text-align: center;
     -webkit-animation: glow 2s ease-in-out infinite alternate;
