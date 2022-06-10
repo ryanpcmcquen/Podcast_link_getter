@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let last_podcast_url;
     const show_button = document.querySelector(".show_button");
     show_button.addEventListener("click", async () => {
-        const secret_message = document.querySelector(".secret_message");
-        secret_message.style.visibility = "visible";
         const podcast_url = document.querySelector(".podcast_url").value;
 
         if (!podcast_url || podcast_url === last_podcast_url) {
@@ -11,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             last_podcast_url = podcast_url;
         }
+        const secret_message = document.querySelector(".secret_message");
+        secret_message.style.visibility = "visible";
+        window.setTimeout(() => {
+            secret_message.style.visibility = "hidden";
+        }, 3000);
         const podcast_feed = await (await fetch(podcast_url)).text();
         const titleMatch = podcast_feed.match(/<title>([^<]+)<\/title>/);
         if (titleMatch.length > 0) {
