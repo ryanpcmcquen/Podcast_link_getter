@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let last_podcast_url;
+    let last_podcast_url = "";
     const show_button = document.querySelector(".show_button");
     show_button.addEventListener("click", async () => {
         const podcast_url = document.querySelector(".podcast_url").value;
